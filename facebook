@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal">
+
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="340sp"
+        android:layout_height="45dp"
+        android:layout_marginTop="280sp"
+        android:layout_marginStart="10sp"
+        android:autofillHints="@string/Email"
+        android:background="#FDFCFD"
+        android:hint="@string/Email_phone_number"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_width="340sp"
+        android:layout_height="45dp"
+        android:layout_marginTop="350sp"
+        android:layout_marginStart="10sp"
+        android:autofillHints="@string/password"
+        android:inputType="textPassword"
+        android:id="@+id/et_password"
+        android:hint="@string/password"
+        android:background="#FDFCFD"/>
+
+    <Button
+        android:layout_width="340sp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="420sp"
+        android:background="#374CC6"
+        android:text="@string/log_in"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/facebook"
+        android:textColor="#FDFCFD"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100sp"
+        android:layout_marginTop="480sp"
+        android:text="@string/forgot_password"
+        android:textColor="#FDFCFD"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/tv_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_for_facebook"
+        android:textColor="#FDFCFD"
+        android:textSize="20sp"
+        android:layout_marginTop="650sp"
+        android:layout_marginStart="90sp"
+        />
+        </RelativeLayout>
+        
+        2. MAINACTIVITY.JAVA
+        public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        TextView reg = findViewById(R.id.tv_sign_up);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+}
+        
+        3. ACTIVITY_REGISTER.XML
+        <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/whats_your_name"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="65sp"
+        />
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90sp"
+       android:layout_marginLeft="10sp"
+        android:hint="@string/first_name"
+
+        />
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90sp"
+        android:hint="@string/last_name"
+        android:layout_marginStart="220sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="what's your email?"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="145sp"
+        />
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="175sp"
+        android:layout_marginStart="10sp"
+        android:hint="Email"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="what's your Password?"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="225sp"
+        />
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="255sp"
+        android:layout_marginStart="10sp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="what's your Phone number?"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="310sp"
+        />
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="335sp"
+        android:layout_marginStart="10sp"
+        android:hint="Phone number"
+        android:inputType="phone"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="When is your birthday?"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="390sp"
+        />
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_marginTop="415sp"
+        android:forceDarkAllowed="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:yearListSelectorColor="#FFFFFF"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="665dp"
+       android:layout_marginStart="165dp"
+        android:text="Signup"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textAllCaps="false"/>
+
+
+
+</RelativeLayout>
+</ScrollView>
+
+
+4. REGISTER.JAVA
+public class Register extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+    }
+}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
